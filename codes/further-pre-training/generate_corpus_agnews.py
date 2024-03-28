@@ -4,14 +4,14 @@ import numpy as np
 
 nlp=spacy.load("en_core_web_md")
 
-test_data=pd.read_csv("test.csv",header=None,sep=",").values
-train_data=pd.read_csv("train.csv",header=None,sep=",").values
+test_data=pd.read_csv("data/test.csv",header=None,sep=",").values
+train_data=pd.read_csv("data/train.csv",header=None,sep=",").values
 
 test=[]
 train=[]
-with open("AGnews_corpus_test.txt","w",encoding="utf-8") as f_test:
-    with open("AGnews_corpus_train.txt", "w", encoding="utf-8") as f_train:
-        with open("AGnews_corpus.txt","w",encoding="utf-8") as f:
+with open("data/AGnews_corpus_test.txt","w",encoding="utf-8") as f_test:
+    with open("data/AGnews_corpus_train.txt", "w", encoding="utf-8") as f_train:
+        with open("data/AGnews_corpus.txt","w",encoding="utf-8") as f:
             for i in range(len(test_data)):
                 if i%1000==0:print(i)
                 f.write(str(test_data[i][1])+"\n")
