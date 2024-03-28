@@ -1,0 +1,18 @@
+
+The files you uploaded seem to be part of a suite of Python scripts related to machine learning, particularly for working with text data and pre-training a language model like BERT. Here's a summary and execution logic of each file:
+
+00test.py: This is a simple script that checks the version of TensorFlow installed on your system. It imports TensorFlow and prints its version.
+
+01generate_corpus_agnews.py: This script is used for processing the AG News dataset. It loads the test and train data from CSV files, processes them using SpaCy to tokenize into sentences, and then saves the tokenized data into separate files for training and testing. It also calculates and prints statistics about the data, such as the maximum and average number of sentences in the test and train datasets.
+
+create_pretraining_data.py: This script prepares data for BERT pre-training. It takes raw text files, tokenizes the text using BERT’s tokenizer, creates masked language model predictions, and prepares training instances. These instances are then written to a TFRecord file, which will be used as input for BERT’s pre-training.
+
+extract_features.py: This script extracts features from text using a pre-trained BERT model. It loads a BERT model with a given configuration and checkpoint, then processes the input text to produce feature vectors. These features can be used for various downstream tasks like text classification, entity recognition, etc.
+
+modeling.py: This file likely contains the model architecture for BERT. It defines the transformer model, with various classes and functions to build the BERT model layers, including attention mechanisms, pooling layers, and so on.
+
+optimization.py: This script includes optimization algorithms used to train the model, specifically AdamWeightDecayOptimizer, which is an optimizer with weight decay (regularization) integrated, suitable for training BERT.
+
+run_pretraining.py: This script is used to run the pre-training of the BERT model. It loads the pre-training data, sets up the training configurations, and starts the training process using the model and optimization settings defined in the other files.
+
+tokenization.py: Contains the tokenization logic for BERT, converting text into tokens that can be fed into the model. It includes classes and functions for basic tokenization, WordPiece tokenization, and utilities for handling the vocabulary.
