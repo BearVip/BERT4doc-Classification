@@ -357,8 +357,10 @@ class BertModel(nn.Module):
         pooled_output = self.pooler(sequence_output)
         return all_encoder_layers, pooled_output
 
-from fastNLP.modules.decoder import MLP    
-    
+# 修改
+# from fastNLP.modules.decoder import MLP    
+from fastNLP.modules.torch.decoder import MLP
+
 class BertForSequenceClassification(nn.Module):
     """BERT model for classification.
     This module is composed of the BERT model with a linear layer on top of

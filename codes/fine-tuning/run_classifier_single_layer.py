@@ -197,13 +197,13 @@ class ColaProcessor(DataProcessor):
 
 class AGNewsProcessor(DataProcessor):
     """Processor for the AG data set."""
-
-    def get_train_examples(self, data_dir):
+# 修改data_num=None
+    def get_train_examples(self, data_dir,data_num=None):
         """See base class."""
         train_data = pd.read_csv(os.path.join(data_dir, "train.csv"),header=None).values
         return self._create_examples(train_data, "train")
-
-    def get_dev_examples(self, data_dir):
+# 修改 data_num=None
+    def get_dev_examples(self, data_dir,data_num=None):
         """See base class."""
         dev_data = pd.read_csv(os.path.join(data_dir, "test.csv"),header=None).values
         return self._create_examples(dev_data, "dev")
